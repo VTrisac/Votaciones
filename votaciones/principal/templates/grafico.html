@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+<head>
+    <title>RESULTADO DE LAS VOTACIONES</title>
+    <link rel="stylesheet" href="{% static "estilos.css" %}" type="text/css">
+</head>
+<body>
+    <h1>RESULTADO DE LAS VOTACIONES</h1>
+    {% for elemento in lista %}
+    <div class="barra" style="background-color: {{elemento.color}}; width: {{elemento.largo}}%">
+        {{elemento.partido}} - <i>Total de votos: {{elemento.votos}}</i></div>
+    {% endfor %}
+    <p class="totales">Total recuento: {{ totales }}</p>
+</body>
+</html>
